@@ -20,7 +20,7 @@ class ButtonAjax extends Widget
         $this->css='btn btn-success';
         $this->options=[
             'value'=>  Url::to([$this->route]),
-            'id'=>'btn-model-'.$this->getId(),
+            'id'=>'btn-modal-'.$this->getId(),
             'class'=>$this->css,
         ];
     }
