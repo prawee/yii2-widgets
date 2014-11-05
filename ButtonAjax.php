@@ -7,7 +7,7 @@ namespace prawee\widgets;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use auth\Asset;
+
 class ButtonAjax extends Widget
 {
     public $name;
