@@ -33,7 +33,7 @@ class ButtonAjax extends Widget
     {
         $view = $this->getView();
         $js ='$("#btn-model-'.$this->getId().'").click(function(){
-            $("main-model").modal({backdrop:"static",keyboard:false})
+            $("#main-model").modal({backdrop:"static",keyboard:false})
             .find("#main-content-modal")
             .load($(this).attr("value"));
          });';
