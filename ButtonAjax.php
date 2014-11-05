@@ -32,8 +32,8 @@ class ButtonAjax extends Widget
     protected function registerAssets()
     {
         $view = $this->getView();
-        $js ='$("#btn-model-'.$this->getId().'").click(function(){
-            $("#main-model").modal({backdrop:"static",keyboard:false})
+        $js ='$("#btn-modal-'.$this->getId().'").click(function(){
+            $("#main-modal").modal({backdrop:"static",keyboard:false})
             .find("#main-content-modal")
             .load($(this).attr("value"));
          });';
