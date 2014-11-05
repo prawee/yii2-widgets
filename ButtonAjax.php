@@ -10,16 +10,21 @@ use yii\helpers\Url;
 
 class ButtonAjax extends Widget
 {
-    public $name;
-    public $route;
+
+    public $title='Modal';
+
+    /*
+     * ['create'],
+     * ['update','id'=>1]
+     */
+    public $route=['#'];
     public $options=[];
-    public $css;
+    public $css='btn btn-success';
     public function init()
     {
         parent::init();
-        $this->css='btn btn-success';
         $this->options=[
-            'value'=>  Url::to([$this->route]),
+            'value'=>  Url::to($this->route),
             'id'=>'btn-modal-'.$this->getId(),
             'class'=>$this->css,
         ];
@@ -27,7 +32,7 @@ class ButtonAjax extends Widget
 
     public function run(){
         $this->registerAssets();
-        return Html::button($this->name,$this->options);
+        return Html::button($this->title,$this->options);
     }
     protected function registerAssets()
     {
