@@ -1,14 +1,14 @@
 <?php
-/*
+/* 2014-11-05
  * @author Prawee Wongsa <konkeanweb@gmail.com>
  */
 namespace prawee\widgets;
 
-use Yii;
+use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use auth\Asset;
-class Button extends \yii\base\Widget
+class ButtonAjax extends Widget
 {
     public $name;
     public $route;
@@ -16,24 +16,23 @@ class Button extends \yii\base\Widget
     public $css;
     public function init()
     {
+        parent::init();
         $this->css='btn btn-success';
         $this->options=[
             'value'=>  Url::to([$this->route]),
             'id'=>'btn-model-'.$this->getId(),
             'class'=>$this->css,
         ];
-        parent::init();
     }
 
-    public static function ajax(){
+    public static function run(){
         $this->registerAssets();
-        return Html::button($this->name,$this->options);
+        echo Html::button($this->name,$this->options);
     }
     protected function registerAssets()
     {
         $view = $this->getView();
-        Asset::register($view);
-        $js ='';
+        $js ='alert("ok");';
         $view->registerJs($js);
     }
 }
