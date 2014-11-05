@@ -5,7 +5,7 @@ namespace prawee\widgets;
 /**
  * This is just an example.
  */
-class AutoloadExample extends \yii\base\Widget
+class Widget extends \yii\base\Widget
 {
     public function run()
     {
