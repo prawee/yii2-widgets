@@ -10,19 +10,28 @@ use yii\helpers\Url;
 
 class ButtonAjax extends Widget
 {
-
+    /* Title of button */
     public $title='Modal';
 
-    /*
+    /* getting content from this route
      * ['create'],
-     * ['update','id'=>1]
-     */
+     * ['update','id'=>1] */
     public $route=['#'];
+
+    /* options of button such as
+     * @value   route of content
+     * @id      id of button for javascript
+     * @class   css class 
+     */
     public $options=[];
+
+    /* setting css of button */
     public $css='btn btn-success';
+    
     public function init()
     {
         parent::init();
+        
         $this->options=[
             'value'=>  Url::to($this->route),
             'id'=>'btn-modal-'.$this->getId(),
