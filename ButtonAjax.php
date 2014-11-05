@@ -27,12 +27,16 @@ class ButtonAjax extends Widget
 
     public function run(){
         $this->registerAssets();
-        echo Html::button($this->name,$this->options);
+        return Html::button($this->name,$this->options);
     }
     protected function registerAssets()
     {
         $view = $this->getView();
-        $js ='alert("ok");';
+        $js ='$("#btn-model-'.$this->getId().'").click(function(){
+            $("main-model").modal({backdrop:"static",keyboard:false})
+            .find("#main-content-modal")
+            .load($(this).attr("value"));
+         });';
         $view->registerJs($js);
     }
 }
