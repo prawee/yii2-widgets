@@ -1,6 +1,7 @@
 <?php
 /* 2014-11-05
  * @author Prawee Wongsa <konkeanweb@gmail.com>
+ * @reference http://www.yiiframework.com/wiki/690/render-a-form-in-a-modal-popup-using-ajax/
  */
 namespace prawee\widgets;
 
@@ -47,7 +48,7 @@ class ButtonAjax extends Widget
     {
         $view = $this->getView();
         $js ='$("#btn-modal-'.$this->getId().'").click(function(){
-            $("#main-modal").modal({backdrop:"static",keyboard:false})
+            $("#main-modal").modal("show")
             .find("#main-content-modal")
             .load($(this).attr("value"));
          });';
