@@ -25,7 +25,7 @@ class ButtonAjax extends Widget
         ];
     }
 
-    public static function run(){
+    public function run(){
         $this->registerAssets();
         echo Html::button($this->name,$this->options);
     }
