@@ -32,12 +32,14 @@ class ButtonAjax extends Widget
     public function init()
     {
         parent::init();
-        
-        $this->options=[
-            'value'=>  Url::to($this->route),
-            'id'=>'btn-modal-'.$this->getId(),
-            'class'=>$this->css,
-        ];
+
+        if($this->options==null){
+            $this->options=[
+                'value'=>  Url::to($this->route),
+                'id'=>'btn-modal-'.$this->getId(),
+                'class'=>$this->css,
+            ];
+        }
     }
 
     public function run(){
