@@ -2,6 +2,7 @@
 /* 2014-11-05
  * @author Prawee Wongsa <konkeanweb@gmail.com>
  * @reference http://www.yiiframework.com/wiki/690/render-a-form-in-a-modal-popup-using-ajax/
+ * @version 1.0
  */
 namespace prawee\widgets;
 
@@ -13,6 +14,9 @@ use yii\web\ForbiddenHttpException;
 
 class ButtonAjax extends Widget
 {
+    /* id for javascript */
+    public $id;
+    
     /* name of button */
     public $name='Modal';
 
@@ -34,6 +38,11 @@ class ButtonAjax extends Widget
     public function init()
     {
         parent::init();
+        //id
+        if(empty($this->id)){
+            $this->id='btn-modal'.$this->getId();
+        }
+
         //route
         if(!$this->route){
             throw new ForbiddenHttpException(Yii::t('yii','please setting route options.'));
