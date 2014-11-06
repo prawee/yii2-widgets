@@ -6,11 +6,10 @@
  */
 namespace prawee\widgets;
 
-use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\web\ForbiddenHttpException;
+use yii\web\HttpException;
 
 class ButtonAjax extends Widget
 {
@@ -28,7 +27,7 @@ class ButtonAjax extends Widget
      * ['create'],
      * ['update','id'=>1]
      */
-    public $route=['#'];
+    public $route=[];
 
     /*
      * options of button such as
@@ -63,7 +62,7 @@ class ButtonAjax extends Widget
 
         //route
         if(empty($this->route)){
-            throw new ForbiddenHttpException(Yii::t('yii','please setting route options.'));
+            throw new HttpException(404, 'please setting route options.');
         }else{
             $this->options['value']=Url::to($this->route);
         }
