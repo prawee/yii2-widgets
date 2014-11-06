@@ -69,7 +69,6 @@ class ButtonAjax extends Widget
         if($this->options){
             $this->options=  array_merge($this->options,[
                 'value'=>Url::to($this->route),
-                'class'=>$this->css,
             ]);
         }
     }
