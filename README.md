@@ -36,6 +36,8 @@ dev-master
     echo ButtonAjax::widget([
         'name'=>'Create',
         'route'=>['create'],
+        'modalId'=>'#main-modal',
+        'modalContent'=>'#main-content-modal',
         'options'=>[
             'class'=>'btn btn-success',
         ]
