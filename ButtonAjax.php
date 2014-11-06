@@ -23,6 +23,7 @@ class ButtonAjax extends Widget
     public $name='ButtonAjax';
 
     /*
+     * @route array
      * getting content from this route
      * ['create'],
      * ['update','id'=>1]
@@ -36,9 +37,6 @@ class ButtonAjax extends Widget
      * @class   css class 
      */
     public $options=[];
-
-    /* setting css of button */
-    public $css='btn btn-success';
 
     /*
      * id of modal
@@ -55,30 +53,25 @@ class ButtonAjax extends Widget
     public function init()
     {
         parent::init();
-        //id
         if(empty($this->id)){
             $this->id='btn-modal-'.$this->getId();
         }
-        $this->options['id']=$this->id;
+        //$this->options['id']=$this->id;
 
-        //route
         if(empty($this->route)){
             throw new HttpException(404, 'please setting route options.');
-        }else{
-            $this->options['value']=Url::to($this->route);
         }
-        
-        //class 
-        
 
-        //all options
+        if(empty($this->options['class'])){
+            $this->options['class']='btn btn-default';
+        }
+       
         if($this->options){
             $this->options=  array_merge($this->options,[
+                'value'=>Url::to($this->route),
                 'class'=>$this->css,
             ]);
         }
-        
-
     }
 
     public function run(){
