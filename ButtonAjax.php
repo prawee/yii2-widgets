@@ -5,9 +5,11 @@
  */
 namespace prawee\widgets;
 
+use Yii;
 use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
+use yii\web\ForbiddenHttpException;
 
 class ButtonAjax extends Widget
 {
@@ -32,17 +34,22 @@ class ButtonAjax extends Widget
     public function init()
     {
         parent::init();
+        //route
+        if(!$this->route){
+            throw new ForbiddenHttpException(Yii::t('yii','please setting route options.'));
+        }else{
+            $this->options['value']=Url::to($this->route);
+        }
 
         if($this->options==null){
             $this->options=[
-                'value'=>  Url::to($this->route),
+                //'value'=>  Url::to($this->route),
                 'id'=>'btn-modal-'.$this->getId(),
                 'class'=>$this->css,
             ];
         }
-        if(!$this->route){
-            
-        }
+        
+
     }
 
     public function run(){
