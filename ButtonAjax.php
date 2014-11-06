@@ -57,8 +57,9 @@ class ButtonAjax extends Widget
         parent::init();
         //id
         if(empty($this->id)){
-            $this->id='#btn-modal-'.$this->getId();
+            $this->id='btn-modal-'.$this->getId();
         }
+        $this->options['id']=$this->id;
 
         //route
         if(empty($this->route)){
@@ -68,7 +69,7 @@ class ButtonAjax extends Widget
         }
         
         //class 
-        $this->options['id']=$this->id;
+        
 
         //all options
         if($this->options){
@@ -87,7 +88,7 @@ class ButtonAjax extends Widget
     protected function registerAssets()
     {
         $view = $this->getView();
-        $js ='$("'.$this->id.'").click(function(){
+        $js ='$("#'.$this->id.'").click(function(){
             $("'.$this->modalId.'").modal("show")
             .find("'.$this->modalContent.'")
             .load($(this).attr("value"));
