@@ -1,6 +1,6 @@
 yii2-widgets
 ============
-yii2 widgets alert 
+- ButtonAjax make button with ajax for modal
 
 Installation
 ------------
