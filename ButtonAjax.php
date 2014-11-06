@@ -11,8 +11,8 @@ use yii\helpers\Url;
 
 class ButtonAjax extends Widget
 {
-    /* Title of button */
-    public $title='Modal';
+    /* name of button */
+    public $name='Modal';
 
     /* getting content from this route
      * ['create'],
@@ -40,11 +40,14 @@ class ButtonAjax extends Widget
                 'class'=>$this->css,
             ];
         }
+        if(!$this->route){
+            
+        }
     }
 
     public function run(){
         $this->registerAssets();
-        return Html::button($this->title,$this->options);
+        return Html::button($this->name,$this->options);
     }
     protected function registerAssets()
     {
