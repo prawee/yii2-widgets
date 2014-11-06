@@ -62,7 +62,7 @@ class ButtonAjax extends Widget
         }
 
         //route
-        if(!$this->route){
+        if(empty($this->route)){
             throw new ForbiddenHttpException(Yii::t('yii','please setting route options.'));
         }else{
             $this->options['value']=Url::to($this->route);
