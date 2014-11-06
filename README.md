@@ -28,6 +28,25 @@ Usage
 1.ButtonAjax
 ----------
 on view 
+dev-master
+```php
+    use prawee\widgets\ButtonAjax;
+    use yii\bootstrap\Modal;
+
+    echo ButtonAjax::widget([
+        'name'=>'Create',
+        'route'=>['create'],
+        'options'=>[
+            'class'=>'btn btn-success',
+        ]
+    ]);
+    ....
+    ....
+    Modal::begin(['id'=>'main-modal']);
+    echo '<div id='main-content-modal'></div>';
+    Modal::end();
+```
+1.0
 ```php
     echo ButtonAjax::widget([
         'title'=>'Create',
@@ -36,6 +55,7 @@ on view
 ```
 
 on controller
+
 ```php
 public functionn actionCreate(){
     .......
