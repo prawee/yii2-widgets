@@ -56,7 +56,6 @@ class ButtonAjax extends Widget
         if(empty($this->id)){
             $this->id='btn-modal-'.$this->getId();
         }
-        //$this->options['id']=$this->id;
 
         if(empty($this->route)){
             throw new HttpException(404, 'please setting route options.');
@@ -68,6 +67,7 @@ class ButtonAjax extends Widget
        
         if($this->options){
             $this->options=  array_merge($this->options,[
+                'id'=>$this->id,
                 'value'=>Url::to($this->route),
             ]);
         }
