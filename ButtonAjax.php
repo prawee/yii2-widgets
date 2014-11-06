@@ -14,18 +14,24 @@ use yii\web\ForbiddenHttpException;
 
 class ButtonAjax extends Widget
 {
-    /* id for javascript */
+    /*
+     * id for javascript
+     * @since 1.0
+     */
     public $id;
     
     /* name of button */
     public $name='Modal';
 
-    /* getting content from this route
+    /*
+     * getting content from this route
      * ['create'],
-     * ['update','id'=>1] */
+     * ['update','id'=>1]
+     */
     public $route=['#'];
 
-    /* options of button such as
+    /*
+     * options of button such as
      * @value   route of content
      * @id      id of button for javascript
      * @class   css class 
@@ -34,13 +40,25 @@ class ButtonAjax extends Widget
 
     /* setting css of button */
     public $css='btn btn-success';
+
+    /*
+     * id of modal
+     * @since 1.0
+     */
+    public $modalId='#main-modal';
+
+    /*
+     * content of modal
+     * @since 1.0
+     */
+    public $modalContent='#main-content-modal';
     
     public function init()
     {
         parent::init();
         //id
         if(empty($this->id)){
-            $this->id='btn-modal'.$this->getId();
+            $this->id='#btn-modal-'.$this->getId();
         }
 
         //route
@@ -49,13 +67,15 @@ class ButtonAjax extends Widget
         }else{
             $this->options['value']=Url::to($this->route);
         }
+        
+        //class 
+        $this->options['id']=$this->id;
 
-        if($this->options==null){
-            $this->options=[
-                //'value'=>  Url::to($this->route),
-                'id'=>'btn-modal-'.$this->getId(),
+        //all options
+        if($this->options){
+            $this->options=  array_merge($this->options,[
                 'class'=>$this->css,
-            ];
+            ]);
         }
         
 
@@ -68,9 +88,9 @@ class ButtonAjax extends Widget
     protected function registerAssets()
     {
         $view = $this->getView();
-        $js ='$("#btn-modal-'.$this->getId().'").click(function(){
-            $("#main-modal").modal("show")
-            .find("#main-content-modal")
+        $js ='$("'.$this->id.'").click(function(){
+            $("'.$this->modalId.'").modal("show")
+            .find("'.$this->modalContent.'")
             .load($(this).attr("value"));
          });';
         $view->registerJs($js);
