@@ -21,7 +21,7 @@ class ButtonAjax extends Widget
     public $id;
     
     /* name of button */
-    public $name='Modal';
+    public $name='ButtonAjax';
 
     /*
      * getting content from this route
