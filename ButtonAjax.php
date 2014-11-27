@@ -81,7 +81,6 @@ class ButtonAjax extends Widget
     {
         $view = $this->getView();
         $js ='$("#'.$this->id.'").click(function(){
-            $("'.$this->modalContent.'").val("");
             $("'.$this->modalId.'").modal("show")
             .find("'.$this->modalContent.'")
             .load($(this).attr("value"));
