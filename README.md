@@ -73,3 +73,7 @@ public functionn actionCreate(){
     }
 }
 ```
+
+Update
+------
+2014-11-27 added indicator.gif and set $modalContent is null before load content.
