@@ -40,12 +40,13 @@ dev-master
         'modalContent'=>'#main-content-modal',
         'options'=>[
             'class'=>'btn btn-success',
+            'title'=>'Button for create application',
         ]
     ]);
     ....
     ....
     Modal::begin(['id'=>'main-modal']);
-    echo '<div id='main-content-modal'></div>';
+    echo '<div id="main-content-modal"></div>';
     Modal::end();
 ```
 1.0
