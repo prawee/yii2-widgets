@@ -10,6 +10,10 @@
 			"email": "konkeanweb@gmail.com"
 		}
 	],
+	"minimum-stability": "dev",
+	"require": {
+		"prawee/yii2-widgets": "*"
+	},
 	"autoload": {
 		"psr-4": {
 			"prawee\\widgets\\": ""
