@@ -27,7 +27,7 @@ Usage
 
 1.ButtonAjax
 ----------
-on view 
+On view 
 dev-master
 ```php
     use prawee\widgets\ButtonAjax;
@@ -49,15 +49,8 @@ dev-master
     echo '<div id="main-content-modal"></div>';
     Modal::end();
 ```
-1.0
-```php
-    echo ButtonAjax::widget([
-        'title'=>'Create',
-        'route'=>['create'],
-    ]);
-```
 
-on controller
+On controller
 
 ```php
 public functionn actionCreate(){
@@ -77,4 +70,5 @@ public functionn actionCreate(){
 
 Update
 ------
+2015-04-21 update document without 1.0 version that just keep how to using current version only. 
 2014-11-27 added indicator.gif and set $modalContent is null before load content.
