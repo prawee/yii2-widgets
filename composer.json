@@ -12,7 +12,7 @@
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"prawee/yii2-widgets": "*"
+		"yiisoft/yii2": "*"
 	},
 	"autoload": {
 		"psr-4": {
