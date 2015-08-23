@@ -16,7 +16,7 @@ php composer.phar require --prefer-dist prawee/yii2-widgets "*"
 or add
 
 ```
-"prawee/yii2-widgets": "*"
+"prawee/yii2-widgets": "dev-master"
 ```
 
 to the require section of your `composer.json` file.
@@ -70,5 +70,6 @@ public functionn actionCreate(){
 
 Update
 ------
+2015-08-23 update how to installation with default version.
 2015-04-21 update document without 1.0 version that just keep how to using current version only. 
 2014-11-27 added indicator.gif and set $modalContent is null before load content.
