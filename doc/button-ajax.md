@@ -2,9 +2,9 @@ view
 ----
 
 ```php
-use prawee\widgets\ButtonAjax;
+    use prawee\widgets\ButtonAjax;
     use yii\bootstrap\Modal;
-
+    
     echo ButtonAjax::widget([
         'name'=>'Create',
         'route'=>['create'],
@@ -26,19 +26,19 @@ controller
 ----------
 
 ```php
-public functionn actionCreate(){
-    .......
-    .......
-    if(Yii::$app->getRequest()->isAjax){
-        return $this->renderAjax('create', [
-            'model' => $model,
-        ]);
-    }else{
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+    public functionn actionCreate(){
+        .......
+        .......
+        if(Yii::$app->getRequest()->isAjax){
+            return $this->renderAjax('create', [
+                'model' => $model,
+            ]);
+        }else{
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
     }
-}
 ```
 
 
