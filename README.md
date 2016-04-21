@@ -29,7 +29,7 @@ please read on doc folder.
 Update
 ------
 
-```php
+```
 2016-04-21 move usage section to doc folder and fixed update section
 2015-08-23 update how to installation with default version.
 2015-04-21 update document without 1.0 version that just keep how to using current version only. 
