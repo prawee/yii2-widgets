@@ -21,7 +21,11 @@ or add
 
 to the require section of your `composer.json` file.
 
+Usage
+-----
+please read on doc folder.
         
+
 Update
 ------
 
