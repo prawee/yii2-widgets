@@ -22,6 +22,7 @@ class LinkAjax extends Widget
     public $modalId = '#main-modal';
     public $modalContent = '#main-content-modal';
     public $tag = 'a';
+    public $routeTag = 'href';
 
     public function init()
     {
@@ -38,7 +39,7 @@ class LinkAjax extends Widget
         if ($this->options) {
             $this->options = array_merge($this->options, [
                'id' => $this->id,
-                'value' => Url::to($this->route)
+                $this->routeTag => Url::to($this->route)
             ]);
         }
     }
@@ -48,7 +49,7 @@ class LinkAjax extends Widget
             $("#'.$this->id.'").click(function(){
                 $("'.$this->modalId.'").modal("show")
                 .find("'.$this->modalContent.'")
-                .load($(this).attr("value"));
+                .load($(this).attr("'.$this->routeTag.'"));
             });
         ';
         $this->getView()->registerJs($js);
