@@ -31,7 +31,7 @@ class LinkAjax extends Widget
             $this->id = 'btn-modal-'.$this->getId();
         }
         if (empty($this->route)) {
-            throw new \HttpException(404, 'please setting route options.');
+            throw new HttpException(404, 'please setting route options.');
         }
         if (empty($this->options['class'])) {
             $this->options['class'] = 'btn btn-default';
