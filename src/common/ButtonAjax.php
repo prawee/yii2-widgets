@@ -4,7 +4,7 @@
  * @reference http://www.yiiframework.com/wiki/690/render-a-form-in-a-modal-popup-using-ajax/
  * @version 1.0
  */
-namespace prawee\widgets;
+namespace prawee\widgets\common;
 
 use yii\base\Widget;
 use yii\helpers\Html;

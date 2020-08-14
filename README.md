@@ -1,6 +1,14 @@
-yii2-widgets
+Extends widgets classes for Yii2 and Bootstrap 4
 ============
-- ButtonAjax make button with ajax for modal
+
+The extends class for all widgets classes on views
+
+contains
+--------
+
+- ButtonAjax    for make ajax button for showing modal
+- LinkAjax      for make ajax link for showing modal
+
 
 Installation
 ------------
@@ -23,15 +31,45 @@ to the require section of your `composer.json` file.
 
 Usage
 -----
-please read on doc folder.
-        
+ 
+### ButtonAjax | LinkAjax
 
-Update
-------
+#### on your views
 
+```bash
+use prawee\widgets\ButtonAjax;
+use yii\bootstrap\Modal;
+
+echo ButtonAjax::widget([
+    'name'=>'Create',
+    'route'=>['create'],
+    'modalId'=>'#main-modal',
+    'modalContent'=>'#main-content-modal',
+    'options'=>[
+        'class'=>'btn btn-success',
+        'title'=>'Button for create application',
+    ]
+]);
+...
+Modal::begin(['id'=>'main-modal']);
+echo '<div id="main-content-modal"></div>';
+Modal::end();
 ```
-2016-04-21 move usage section to doc folder and fixed update section
-2015-08-23 update how to installation with default version.
-2015-04-21 update document without 1.0 version that just keep how to using current version only. 
-2014-11-27 added indicator.gif and set $modalContent is null before load content.
+
+#### on your controller
+
+```bash
+public functionn actionCreate(){
+    ...
+    if(Yii::$app->getRequest()->isAjax){
+        return $this->renderAjax('create', [
+            'model' => $model,
+        ]);
+    }else{
+        return $this->render('create', [
+            'model' => $model,
+        ]);
+    }
+}
+
 ```
