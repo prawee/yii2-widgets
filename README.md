@@ -18,7 +18,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist prawee/yii2-widgets "*"
+php composer.phar require --prefer-dist prawee/yii2-widgets "dev-master"
 ```
 
 or add
