@@ -6,7 +6,7 @@
  * @author Prawee Wongsa <konkeanweb@gmail.com>
  * @license BSD-3-Clause
  */
-namespace prawee\widgets;
+namespace prawee\widgets\common;
 
 use yii\base\Widget;
 use yii\helpers\Html;
