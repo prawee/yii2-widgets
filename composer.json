@@ -12,12 +12,25 @@
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"yiisoft/yii2": "*",
-		"yiisoft/yii2-bootstrap4": "*"
+		"yiisoft/yii2": "2.*",
+		"yiisoft/yii2-bootstrap4": "2.0.9"
 	},
 	"autoload": {
 		"psr-4": {
 			"prawee\\widgets\\": "src"
 		}
-	}
+	},
+	"config": {
+		"process-timeout": 1800,
+		"discard-changes": true,
+		"fxp-asset": {
+			"enabled": false
+		}
+	},
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
 }
